@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive game system</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class='question-card'>
+      <div class='question-header-div'>
+        <h1 class='question-header'>Welcome to the 5 questions game 😁</h1>
+      </div>
+      <div class="question-body-div">
+        <div class='question-logo-div'>
+          <img src="./question_mark_cartoony_with_eyes_monsterbrain.svg" alt="question logo" class='question-logo'>
+        </div>
+        <div class="info-div-parent">
+          <div class='question-info-div' id='question-info-div'>
+            <h3 class='question' id='question'></h3>
+            <ol id="options" style="margin-left: 20px">
+            </ol>
+          </div>
+          <div class='bottom-stuff'>
+            <div class="buttons">
+              <button id="next-button">Next</button>
+            </div>
+            <div id='score-div'>
+              <span>Score:</span><span id='score'>0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Built by Deji Abiola</p>
+        <span><a href="https://www.github.com/dejiabiola"><img src="./circles.svg" alt="github logo" class='socials'></a></span>
+        <span><a href="https://www.twitter.com/deji_abiola"><img src="./social-media.svg" alt="twitter logo" class='socials'></a></span>
+      </div>
+    </div>
+    <input type="hidden" name="" value='1' id=ui-value>
+    <script src="index.js"></script>
+</body>
+</html>
