@@ -31,8 +31,27 @@ function prepareUi() {
 
 
 function changeToNextQuestion() {
+  const getValidation = validate()
+  if (!getValidation) {
+    return
+  }
   prepareUi()
   getUserClickedOption()
+}
+
+function validate() {
+  const options = document.getElementsByTagName('label');
+  let answered = false
+  for (let option of options) {
+    if (option.classList.contains('success') || option.classList.contains('failure')) {
+      answered = true
+    }
+  }
+  if (answered === false) {
+    alert("You need to pick an option to continue to the next question")
+    return false
+  }
+  return true
 }
 
 
@@ -82,9 +101,28 @@ function getUserClickedOption() {
   const options = document.getElementsByTagName('label');
   for (let option of options) {
     option.addEventListener('click', (event) => {
+      const hasAnswered = verifyHasAnswered()
+      if (hasAnswered) {
+        return
+      }
       handleClick(option)
     })
   }
+}
+
+function verifyHasAnswered() {
+  const options = document.getElementsByTagName('label');
+  let answered = false
+  for (let option of options) {
+    if (option.classList.contains('success') || option.classList.contains('failure')) {
+      answered = true
+    }
+  }
+  if (answered === true) {
+    alert("You already picked an option. Please continue to the next question")
+    return true
+  }
+  return false
 }
 
 
